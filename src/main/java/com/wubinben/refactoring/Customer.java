@@ -1,6 +1,6 @@
 package com.wubinben.refactoring;
 
-public class Customer {
+public class Customer implements Nullable {
     private String name;
 
     public Customer() {
@@ -21,6 +21,7 @@ public class Customer {
         return new PaymentHistory();
     }
 
+    @Override
     public boolean isNull() {
         return false;
     }
