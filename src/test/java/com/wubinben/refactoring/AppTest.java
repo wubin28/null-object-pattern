@@ -22,4 +22,21 @@ public class AppTest {
         App app = new App(site);
         assertThat("Ben WU", is(app.getPlan(customer).getDescription()));
     }
+
+    @Test
+    public void the_customer_name_should_be_occupant_if_the_customer_is_null() {
+        Customer customer = Customer.newNull();
+        Site site = new Site(customer);
+        App app = new App(site);
+        assertThat("occupant", is(app.getCustomerName(customer)));
+    }
+
+    @Test
+    public void the_customer_name_should_be_right_if_the_customer_is_not_null() {
+        Customer customer = new Customer("Ben WU");
+        Site site = new Site(customer);
+        App app = new App(site);
+        assertThat("Ben WU", is(app.getCustomerName(customer)));
+    }
+
 }
