@@ -9,7 +9,7 @@ import static org.hamcrest.core.Is.is;
 public class AppTest {
     @Test
     public void the_billing_plan_should_be_basic_if_the_customer_is_null() {
-        Customer customer = new NullCustomer();
+        Customer customer = Customer.newNull();
         Site site = new Site(customer);
         App app = new App(site);
         assertThat("basic", is(app.getPlan(customer).getDescription()));
