@@ -11,7 +11,7 @@ public class Client {
 
     public BillingPlan getPlan(Customer customer) {
         BillingPlan plan;
-        if (customer == null) {
+        if (customer.isNull()) {
             plan = BillingPlan.basic();
         } else {
             plan = customer.getPlan();
@@ -21,7 +21,7 @@ public class Client {
 
     public String getCustomerName(Customer customer) {
         String customerName;
-        if (customer == null) {
+        if (customer.isNull()) {
             customerName = "occupant";
         } else {
             customerName = customer.getName();
@@ -31,7 +31,7 @@ public class Client {
 
     public int getWeeksDelinquent(Customer customer) {
         int weeksDelinquent;
-        if (customer == null) {
+        if (customer.isNull()) {
             weeksDelinquent = 0;
         } else {
             weeksDelinquent = customer.getHistory().getWeeksDelinquentInLastYear();

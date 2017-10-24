@@ -8,7 +8,7 @@ public class Site {
     }
 
     Customer getCustomer() {
-        return (customer == null ?
+        return (customer.isNull() ?
         Customer.newNull() :
         this.customer);
     }
