@@ -25,4 +25,8 @@ public class Customer implements Nullable {
     public boolean isNull() {
         return false;
     }
+
+    static Customer newNull() {
+        return new NullCustomer();
+    }
 }
