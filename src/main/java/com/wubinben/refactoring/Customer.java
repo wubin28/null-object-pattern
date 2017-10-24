@@ -29,4 +29,11 @@ public class Customer implements Nullable {
     static Customer newNull() {
         return new NullCustomer();
     }
+
+    public static class NullCustomer extends Customer {
+        @Override
+        public boolean isNull() {
+            return true;
+        }
+    }
 }
