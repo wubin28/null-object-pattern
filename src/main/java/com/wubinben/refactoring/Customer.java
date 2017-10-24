@@ -3,6 +3,10 @@ package com.wubinben.refactoring;
 public class Customer {
     private String name;
 
+    public Customer() {
+        this("<no name>");
+    }
+
     public Customer(String name) {
         this.name = name;
     }
@@ -15,5 +19,9 @@ public class Customer {
     }
     public PaymentHistory getHistory() {
         return new PaymentHistory();
+    }
+
+    public boolean isNull() {
+        return false;
     }
 }
