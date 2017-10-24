@@ -1,10 +1,10 @@
 package com.wubinben.refactoring;
 
-public class Client {
+public class App {
     Site site;
     Customer customer;
 
-    public Client(Site site) {
+    public App(Site site) {
         this.site = site;
         this.customer = site.getCustomer();
     }
