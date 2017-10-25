@@ -8,8 +8,6 @@ public class Site {
     }
 
     Customer getCustomer() {
-        return (customer.isNull() ?
-        Customer.newNull() :
-        this.customer);
+        return this.customer;
     }
 }
