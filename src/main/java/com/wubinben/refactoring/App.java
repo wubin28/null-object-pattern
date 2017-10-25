@@ -20,13 +20,7 @@ public class App {
     }
 
     public String getCustomerName(Customer customer) {
-        String customerName;
-        if (customer.isNull()) {
-            customerName = "occupant";
-        } else {
-            customerName = customer.getName();
-        }
-        return customerName;
+        return customer.getName();
     }
 
     public int getWeeksDelinquent(Customer customer) {

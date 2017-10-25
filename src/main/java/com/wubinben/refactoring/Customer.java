@@ -4,7 +4,7 @@ public class Customer implements Nullable {
     private String name;
 
     public Customer() {
-        this("<no name>");
+        this("occupant");
     }
 
     public Customer(String name) {
@@ -34,6 +34,9 @@ public class Customer implements Nullable {
         @Override
         public boolean isNull() {
             return true;
+        }
+        public String getName() {
+            return super.name;
         }
     }
 }
