@@ -10,13 +10,7 @@ public class App {
     }
 
     public BillingPlan getPlan(Customer customer) {
-        BillingPlan plan;
-        if (customer.isNull()) {
-            plan = BillingPlan.basic();
-        } else {
-            plan = customer.getPlan();
-        }
-        return plan;
+        return customer.getPlan();
     }
 
     public String getCustomerName(Customer customer) {
