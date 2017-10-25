@@ -18,12 +18,6 @@ public class App {
     }
 
     public int getWeeksDelinquent(Customer customer) {
-        int weeksDelinquent;
-        if (customer.isNull()) {
-            weeksDelinquent = 0;
-        } else {
-            weeksDelinquent = customer.getHistory().getWeeksDelinquentInLastYear();
-        }
-        return weeksDelinquent;
+        return customer.getHistory().getWeeksDelinquentInLastYear();
     }
 }
