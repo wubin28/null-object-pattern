@@ -19,7 +19,7 @@ public class Customer implements Nullable {
     }
 
     public PaymentHistory getHistory() {
-        return isNull() ? PaymentHistory.newNull() : new PaymentHistory(5);
+        return new PaymentHistory(5);
     }
 
     @Override
@@ -44,6 +44,10 @@ public class Customer implements Nullable {
 
         public BillingPlan getPlan() {
             return BillingPlan.basic();
+        }
+
+        public PaymentHistory getHistory() {
+            return PaymentHistory.newNull();
         }
     }
 }
