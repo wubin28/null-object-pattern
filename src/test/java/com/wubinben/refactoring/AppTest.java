@@ -12,7 +12,7 @@ public class AppTest {
         Customer customer = Customer.newNull();
         Site site = new Site(customer);
         App app = new App(site);
-        assertThat("basic", is(app.getPlan(customer).getDescription()));
+        assertThat(app.getPlan(customer).getDescription(), is("basic"));
     }
 
     @Test
@@ -20,7 +20,7 @@ public class AppTest {
         Customer customer = new Customer("Ben WU");
         Site site = new Site(customer);
         App app = new App(site);
-        assertThat("Ben WU", is(app.getPlan(customer).getDescription()));
+        assertThat(app.getPlan(customer).getDescription(), is("Ben WU"));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class AppTest {
         Customer customer = Customer.newNull();
         Site site = new Site(customer);
         App app = new App(site);
-        assertThat("occupant", is(app.getCustomerName(customer)));
+        assertThat(app.getCustomerName(customer), is("occupant"));
     }
 
     @Test
@@ -36,7 +36,14 @@ public class AppTest {
         Customer customer = new Customer("Ben WU");
         Site site = new Site(customer);
         App app = new App(site);
-        assertThat("Ben WU", is(app.getCustomerName(customer)));
+        assertThat(app.getCustomerName(customer), is("Ben WU"));
     }
 
+    @Test
+    public void the_delinquent_should_be_0_if_the_customer_is_null() {
+        Customer customer = Customer.newNull();
+        Site site = new Site(customer);
+        App app = new App(site);
+        assertThat(app.getWeeksDelinquent(customer), is(0));
+    }
 }
