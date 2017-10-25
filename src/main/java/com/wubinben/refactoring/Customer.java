@@ -19,7 +19,7 @@ public class Customer implements Nullable {
     }
 
     public PaymentHistory getHistory() {
-        return new PaymentHistory();
+        return new PaymentHistory(5);
     }
 
     @Override

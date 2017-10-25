@@ -40,10 +40,18 @@ public class AppTest {
     }
 
     @Test
-    public void the_delinquent_should_be_0_if_the_customer_is_null() {
+    public void the_weeks_delinquent_in_last_year_should_be_0_if_the_customer_is_null() {
         Customer customer = Customer.newNull();
         Site site = new Site(customer);
         App app = new App(site);
         assertThat(app.getWeeksDelinquent(customer), is(0));
+    }
+
+    @Test
+    public void the_weeks_delinquent_in_last_year_should_be_5_if_the_customer_is_not_null() {
+        Customer customer = new Customer("Ben WU");
+        Site site = new Site(customer);
+        App app = new App(site);
+        assertThat(app.getWeeksDelinquent(customer), is(5));
     }
 }
